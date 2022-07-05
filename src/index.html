@@ -37,40 +37,47 @@
 		</header>
 		<main>
 			<div class="content">
-				<h3>Things I've Made</h3>
+				<div class="section">
+					<h3>Things I've Made</h3>
 
-				<p style="margin-bottom: 25px">
-					<a class="bold" href="https://binder.danstewart.dev/">Binder JS</a><br />
-					A basic JavaScript library for binding DOM elements to JavaScript classes
-				</p>
-				<p style="margin-bottom: 25px">
-					<a class="bold" href="https://logmytime.app/">LogMyTime</a><br />
-					A lightweight working hours and overtime tracker
-				</p>
-				<p style="margin-bottom: 25px">
-					<a class="bold" href="https://scovid19.xyz">scovid19.xyz</a><br />
-					A COVID-19 stats dashboard for Scotland
-				</p>
-				<p style="margin-bottom: 25px">
-					<a class="bold" href="https://wordle.danstewart.xyz">Custom Wordle</a><br />
-					A wordle clone that lets you create games for others to play
-				</p>
-				<p style="margin-bottom: 25px">
-					<a class="bold" href="https://onion.danstewart.xyz">Onion or not?</a><br />
-					A news headline guessing game
-				</p>
-				<p style="margin-bottom: 25px">
-					<a class="bold" href="https://pypi.org/project/quickrun/">quickrun</a><br />
-					Python tools for running commands across multiple servers
-				</p>
-				<p style="margin-bottom: 25px">
-					<a class="bold" href="https://crates.io/crates/clinput">CLInput</a><br />
-					A rust crate for handling CLI input
-				</p>
-				<p style="margin-bottom: 25px">
-					<a class="bold" href="https://addons.mozilla.org/en-GB/firefox/addon/github-widener/">GitHub Widener for Firefox</a><br />
-					A firefox extension to make GitHub wider
-				</p>
+					<p style="margin-bottom: 25px">
+						<a class="bold" href="https://binder.danstewart.dev/">Binder JS</a><br />
+						A basic JavaScript library for binding DOM elements to JavaScript classes
+					</p>
+					<p style="margin-bottom: 25px">
+						<a class="bold" href="https://logmytime.app/">LogMyTime</a><br />
+						A lightweight working hours and overtime tracker
+					</p>
+					<p style="margin-bottom: 25px">
+						<a class="bold" href="https://scovid19.xyz">scovid19.xyz</a><br />
+						A COVID-19 stats dashboard for Scotland
+					</p>
+					<p style="margin-bottom: 25px">
+						<a class="bold" href="https://wordle.danstewart.xyz">Custom Wordle</a><br />
+						A wordle clone that lets you create games for others to play
+					</p>
+					<p style="margin-bottom: 25px">
+						<a class="bold" href="https://onion.danstewart.xyz">Onion or not?</a><br />
+						A news headline guessing game
+					</p>
+					<p style="margin-bottom: 25px">
+						<a class="bold" href="https://pypi.org/project/quickrun/">quickrun</a><br />
+						Python tools for running commands across multiple servers
+					</p>
+					<p style="margin-bottom: 25px">
+						<a class="bold" href="https://crates.io/crates/clinput">CLInput</a><br />
+						A rust crate for handling CLI input
+					</p>
+					<p style="margin-bottom: 25px">
+						<a class="bold" href="https://addons.mozilla.org/en-GB/firefox/addon/github-widener/">GitHub Widener for Firefox</a><br />
+						A firefox extension to make GitHub wider
+					</p>
+				</div>
+
+				<div class="section">
+					<h3>Contact</h3>
+					<p id="contact">You can contact me at </p>
+				</div>
 			</div>
 		</main>
 	</body>
@@ -94,6 +101,10 @@
 	--font-family-mono: monaco, "Consolas", "Lucida Console", monospace;
 }
 
+body {
+	margin-bottom: 500px;
+}
+
 body.light {
 	--bg-color: #ffffff;
 	--bg-secondary-color: #f3f3f6;
@@ -103,6 +114,9 @@ body.light {
 }
 
 .content {
+}
+
+.section {
 	padding-top: 30px;
 }
 
@@ -127,4 +141,8 @@ function toggleTheme() {
 	let isLight = document.body.classList.contains('light');
 	icon.src = isLight ? MOON : SUN;
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+	document.querySelector("#contact").innerHTML += `<a href="mailto:k99a6bop@4wrd.cc">k99a6bop@4wrd.cc</a>`;
+});
 </script>
