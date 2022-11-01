@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
 		<meta name="author" content="Dan Stewart" />
@@ -10,12 +10,12 @@
 		<title>Dan Stewart</title>
 
 		<!-- From https://favicon.io/ -->
-		<link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
-		<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png" />
+		<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png" />
 
 		<!-- chota css -->
-		<link rel="stylesheet" href="https://unpkg.com/chota@latest">
+		<link rel="stylesheet" href="https://unpkg.com/chota@latest" />
 
 		<script defer data-domain="danstewart.dev" src="https://stats.danstewart.xyz/js/plausible.js"></script>
 	</head>
@@ -24,14 +24,14 @@
 		<header>
 			<nav class="nav">
 				<div class="nav-left">
-					<h1 style="font-family: monospace;">danstewart.dev</h1>
+					<h1 style="font-family: monospace">danstewart.dev</h1>
 				</div>
 				<div class="nav-right">
-						<a href="https://blog.danstewart.dev"><img src="https://icongr.am/feather/file-text.svg?size=128&color=777777"/></a>
-						<a href="https://github.com/danstewart"><img src="https://icongr.am/feather/github.svg?size=128&color=777777"/></a>
-						<a href="https://twitter.com/danstewart_"><img src="https://icongr.am/feather/twitter.svg?size=128&color=777777"></a>
-						<a href="https://www.linkedin.com/in/daniel-stewart-a699531b3/"><img src="https://icongr.am/feather/linkedin.svg?size=128&color=777777"></a>
-						<a id="theme-toggle" onclick="toggleTheme()"><img id="theme-toggle-icon" src="https://icongr.am/feather/sun.svg?size=128&color=777777"/></a>
+					<a href="https://blog.danstewart.dev"><ion-icon name="document-text-outline"></ion-icon></a>
+					<a href="https://github.com/danstewart"><ion-icon name="logo-github"></ion-icon></a>
+					<a rel="me" href="https://fosstodon.org/@danstewart_"><ion-icon name="logo-mastodon"></ion-icon></a>
+					<a href="https://www.linkedin.com/in/daniel-stewart-a699531b3/"><ion-icon name="logo-linkedin"></ion-icon></a>
+					<a id="theme-toggle" onclick="toggleTheme()"><ion-icon name="sunny-outline"></ion-icon></a>
 				</div>
 			</nav>
 		</header>
@@ -69,80 +69,92 @@
 						A rust crate for handling CLI input
 					</p>
 					<p style="margin-bottom: 25px">
-						<a class="bold" href="https://addons.mozilla.org/en-GB/firefox/addon/github-widener/">GitHub Widener for Firefox</a><br />
+						<a class="bold" href="https://addons.mozilla.org/en-GB/firefox/addon/github-widener/"
+							>GitHub Widener for Firefox</a
+						><br />
 						A firefox extension to make GitHub wider
 					</p>
 				</div>
 
 				<div class="section">
 					<h3>Contact</h3>
-					<p id="contact">You can contact me at </p>
+					<p id="contact">You can contact me at</p>
 				</div>
 			</div>
 		</main>
+
+		<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+		<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 	</body>
 </html>
 
 <style>
-:root {
-	--bg-color: #000;
-	--bg-secondary-color: #131316;
-	--color-primary: #306BAC;
-	--color-lightGrey: #747681;
-	--color-grey: #ccc;
-	--color-darkGrey: #777;
-	--color-error: #d43939;
-	--color-success: #28bd14;
-	--grid-maxWidth: 120rem;
-	--grid-gutter: 2rem;
-	--font-size: 1.6rem;
-	--font-color: #f5f5f5;
-	--font-family-sans: sans-serif;
-	--font-family-mono: monaco, "Consolas", "Lucida Console", monospace;
-}
+	:root {
+		--bg-color: #000;
+		--bg-secondary-color: #131316;
+		--color-primary: #306bac;
+		--color-lightGrey: #747681;
+		--color-grey: #ccc;
+		--color-darkGrey: #777;
+		--color-error: #d43939;
+		--color-success: #28bd14;
+		--grid-maxWidth: 120rem;
+		--grid-gutter: 2rem;
+		--font-size: 1.6rem;
+		--font-color: #f5f5f5;
+		--font-family-sans: sans-serif;
+		--font-family-mono: monaco, "Consolas", "Lucida Console", monospace;
+	}
 
-body {
-	margin-bottom: 500px;
-}
+	body {
+		margin-bottom: 500px;
+	}
 
-body.light {
-	--bg-color: #ffffff;
-	--bg-secondary-color: #f3f3f6;
-	--font-color: #333333;
-	--color-grey: #747681;
-	--color-darkGrey: #3f4144;
-}
+	body.light {
+		--bg-color: #ffffff;
+		--bg-secondary-color: #f3f3f6;
+		--font-color: #333333;
+		--color-grey: #747681;
+		--color-darkGrey: #3f4144;
+	}
 
-.content {
-}
+	ion-icon {
+		font-size: 32px;
+	}
 
-.section {
-	padding-top: 30px;
-}
+	.content {
+	}
 
-body, html {
-	padding: 30px;
-	height: 100%;
-}
+	.section {
+		padding-top: 30px;
+	}
 
-.bold {
-	font-weight: bold;
-}
+	body,
+	html {
+		padding: 30px;
+		height: 100%;
+	}
+
+	.bold {
+		font-weight: bold;
+	}
 </style>
 
 <script>
-// Toggle between light and dark theme
-function toggleTheme() {
-	const SUN = 'https://icongr.am/feather/sun.svg?size=128&color=777777';
-	const MOON = 'https://icongr.am/feather/moon.svg?size=128&color=777777';
-	let anchor = document.querySelector('#theme-toggle');
-	let icon = document.querySelector('#theme-toggle-icon');
-	document.body.classList.toggle('light');
-	let isLight = document.body.classList.contains('light');
-	icon.src = isLight ? MOON : SUN;
-}
+	// Toggle between light and dark theme
+	function toggleTheme() {
+		const SUN = `<ion-icon name="sunny-outline"></ion-icon>`;
+		const MOON = `<ion-icon name="moon-outline"></ion-icon>`;
 
-document.addEventListener("DOMContentLoaded", () => {
-	document.querySelector("#contact").innerHTML += `<a href="mailto:k99a6bop@4wrd.cc">k99a6bop@4wrd.cc</a>`;
-});
+		document.body.classList.toggle("light");
+
+		let isLight = document.body.classList.contains("light");
+
+		let anchor = document.querySelector("#theme-toggle");
+		anchor.innerHTML = isLight ? MOON : SUN;
+	}
+
+	document.addEventListener("DOMContentLoaded", () => {
+		document.querySelector("#contact").innerHTML += `<a href="mailto:k99a6bop@4wrd.cc">k99a6bop@4wrd.cc</a>`;
+	});
 </script>
