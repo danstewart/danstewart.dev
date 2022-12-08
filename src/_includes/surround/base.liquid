@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<meta name="author" content="Dan Stewart" />
+
+		<title>{{ title | default: "Dan Stewart" }}</title>
+
+		<!-- From https://favicon.io/ -->
+		<link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png" />
+		<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png" />
+
+		<!-- CSS -->
+		<link rel="stylesheet" href="https://unpkg.com/chota@latest" />
+
+		<!-- Plausible -->
+		<script defer data-domain="danstewart.dev" src="https://stats.danstewart.xyz/js/plausible.js"></script>
+
+		<!-- Our stuff -->
+		<link rel="stylesheet" href="/static/styles/main.css" />
+		<script src="/static/js/main.js"></script>
+
+		<!-- Child template overrides -->
+		{% block head %}{% endblock %}
+	</head>
+
+	<body>
+	</body>
+
+	<body class="bg">
+		<header>
+			<nav class="nav">
+				<div class="nav-left">
+					<h1 class="header-text"><a href="/">danstewart.dev</a></h1>
+				</div>
+				<div class="nav-right">
+					<a href="/posts"><ion-icon name="document-text-outline"></ion-icon></a>
+					<a href="https://github.com/danstewart"><ion-icon name="logo-github"></ion-icon></a>
+					<a rel="me" href="https://fosstodon.org/@danstewart_"><ion-icon name="logo-mastodon"></ion-icon></a>
+					<a href="https://www.linkedin.com/in/daniel-stewart-a699531b3/"><ion-icon name="logo-linkedin"></ion-icon></a>
+					<a id="theme-toggle"><ion-icon name="sunny-outline"></ion-icon></a>
+				</div>
+			</nav>
+		</header>
+		<main>
+			<div class="content">
+				{% block content %}
+				{% endblock %}
+			</div>
+		</main>
+
+		<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+		<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+	</body>
+</html>

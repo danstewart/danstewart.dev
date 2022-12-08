@@ -1,0 +1,31 @@
+---
+title: Dan's Blog
+pagination:
+  data: collections.post
+  size: 10
+  reverse: true
+  alias: posts
+---
+
+{% layout "surround/base.liquid" %}
+
+{% block content %}
+    {% for post in posts  %}
+        <article>
+            <h3>
+                <a href="{{ post.url | url }}">{{ post.data.title }}</a>
+            </h3>
+            {{ post.date | date: "%B %d %Y" }}
+        </article>
+    {% endfor %}
+
+    <style>
+        h3 {
+            margin-bottom: 5px;
+        }
+
+        article {
+            margin-bottom: 25px;
+        }
+    </style>
+{% endblock content %}
