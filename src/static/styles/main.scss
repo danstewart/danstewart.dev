@@ -1,3 +1,4 @@
+/* Dark theme */
 :root {
 	--bg-color: #000;
 	--bg-secondary-color: #131316;
@@ -7,6 +8,7 @@
 	--color-darkGrey: #c8c8c8;
 	--color-error: #d43939;
 	--color-success: #28bd14;
+	--color-code: #00a8c8;
 	--grid-maxWidth: 120rem;
 	--grid-gutter: 2rem;
 	--font-size: 1.6rem;
@@ -15,20 +17,38 @@
 	--font-family-mono: monaco, "Consolas", "Lucida Console", monospace;
 }
 
-body {
-	margin-bottom: 500px;
-}
-
+/* Light theme */
 body.light {
 	--bg-color: #ffffff;
 	--bg-secondary-color: #f3f3f6;
 	--font-color: #333333;
 	--color-grey: #747681;
 	--color-darkGrey: #3f4144;
+	--color-code: #147082;
+}
+
+/* Core stuff */
+body {
+	margin-bottom: 500px;
 }
 
 ion-icon {
 	font-size: 32px;
+}
+
+body,
+html {
+	padding: 30px;
+	height: 100%;
+}
+
+code {
+	color: var(--color-code);
+}
+
+/* Classes */
+.bold {
+	font-weight: bold;
 }
 
 .header-text > a {
@@ -42,14 +62,4 @@ ion-icon {
 .content {
 	margin: 0.35em 0 0.7em;
 	padding: 1rem 2rem;
-}
-
-body,
-html {
-	padding: 30px;
-	height: 100%;
-}
-
-.bold {
-	font-weight: bold;
 }

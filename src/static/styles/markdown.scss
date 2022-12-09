@@ -5,7 +5,6 @@
 		margin: 0;
 		padding: 0;
 		line-height: 1.6;
-		max-width: 800px;
 	}
 
 	h1,
@@ -36,9 +35,13 @@
 	}
 
 	pre {
-		width: 80vw;
+		width: 75vw;
 	}
 
 	/* Base styles */
 	font-size: 18px;
+
+	.blog-body {
+		max-width: 800px;
+	}
 }
