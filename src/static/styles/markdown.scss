@@ -28,6 +28,13 @@
 	pre {
 		margin-top: 1.4rem;
 		margin-bottom: 1.4rem;
+		overflow: auto;
+	}
+
+	pre code {
+		overflow-wrap: normal;
+		word-wrap: normal;
+		white-space: pre;
 	}
 
 	p {
