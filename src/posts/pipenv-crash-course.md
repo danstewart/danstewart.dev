@@ -2,7 +2,7 @@
 title: Pipenv Crash Course
 layout: "surround/blog_base.liquid"
 date: 2022-12-05
-updated: 2023-01-01
+updated: 2023-01-11
 tags: ["post"]
 ---
 
@@ -21,6 +21,12 @@ pipenv install rich
 pipenv install rich==12.6.0
 pipenv install "rich<=12.5.1"
 ```
+
+<fieldset class="admonition info mt-15">
+    <legend>ℹ️</legend>
+    When adding new dependencies it's a good idea to use <code>pipenv install --keep-outdated $package</code><br />
+    If this flag is omitted then <code>pipenv</code> will update all other dependencies.
+</fieldset>
 
 ### The `Pipfile` and `Pipfile.lock`
 

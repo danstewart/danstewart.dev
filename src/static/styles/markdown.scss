@@ -52,3 +52,34 @@
 		max-width: 800px;
 	}
 }
+
+.admonition {
+	border: 1px solid #d2d6dd;
+	padding-top: 0px;
+	padding-bottom: 15px;
+	padding-inline: 20px;
+	width: 75vw;
+
+	& > legend {
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+
+	&.danger {
+		border: 2px solid #ff5151;
+
+		& > legend {
+			font-size: 20px;
+			color: #ff5151;
+		}
+	}
+
+	&.info {
+		border: 2px solid #245eff;
+
+		& > legend {
+			font-size: 20px;
+			color: #245eff;
+		}
+	}
+}
