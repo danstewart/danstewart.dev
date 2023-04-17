@@ -2,7 +2,7 @@
 :root {
 	--bg-color: #000;
 	--bg-secondary-color: #131316;
-	--color-primary: #306bac;
+	--color-primary: #F2E86D;
 	--color-lightGrey: #747681;
 	--color-grey: #ccc;
 	--color-darkGrey: #c8c8c8;
@@ -19,6 +19,7 @@
 
 /* Light theme */
 body.light {
+	--color-primary: #044389;
 	--bg-color: #ffffff;
 	--bg-secondary-color: #f3f3f6;
 	--font-color: #333333;
