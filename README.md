@@ -20,5 +20,5 @@ npm run serve
 npm run build
 
 # Copy files to appropriate location to serve
-cp -r build/* /data/www/danstewart.dev
+./deploy.sh
 ```
