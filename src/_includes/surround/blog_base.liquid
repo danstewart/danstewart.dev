@@ -2,10 +2,10 @@
 
 {% block head %}
     <!-- Our stuff -->
-    <link rel="stylesheet" href="/static/styles/markdown.css"/>
+    <link rel="stylesheet" href="/static/styles/markdown.css" />
 
     <!-- 3rd party assets -->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/a11y-dark.min.css"/>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/a11y-dark.min.css" />
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
     <script>
         hljs.highlightAll();
@@ -14,12 +14,12 @@
 
 {% block content %}
     <div class="markdown">
-        <h1>{{ title }}</h1>
+        <h1 style="margin-bottom: 0">{{ title }}</h1>
 
-        <p>
+        <p class="mono">
             Posted: {{ date | date: "%B %d %Y" }}
             {% if updated %}
-                <br/>Updated: {{ updated | date: "%B %d %Y" }}
+                (Updated: {{ updated | date: "%B %d %Y" }})
             {% endif %}
         </p>
 
