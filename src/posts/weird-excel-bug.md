@@ -6,7 +6,7 @@ updated: null
 tags: ["post"]
 ---
 
-A while ago I was working on building a basic web page that allowed a user to upload a CSV file to an S3 bucket using a [presigned S3 upload URLs](https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-presigned-url.html).
+A while ago I was working on building a basic web page that allowed a user to upload a CSV file to an S3 bucket using a [presigned S3 upload URL](https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-presigned-url.html).
 
 This was easy enough, I tell AWS I want to upload a file with a `Content-Type` of `text/csv` and it will give me a pre-signed URL that I can use to upload without authenticating at the time of upload - nice and easy.
 
