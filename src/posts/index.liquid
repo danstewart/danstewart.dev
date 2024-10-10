@@ -14,10 +14,10 @@ pagination:
         <h2>Blog Posts</h2>
         {% for post in posts  %}
             <article>
-                <h3>
+                <h3 class="is-marginless is-paddingless">
                     <a href="{{ post.url | url }}">{{ post.data.title }}</a>
                 </h3>
-                {{ post.date | date: "%B %d %Y" }}
+                <i>{{ post.date | date: "%B %d %Y" }}</i>
             </article>
         {% endfor %}
     </div>
