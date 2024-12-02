@@ -1,1 +1,1 @@
-scp -r build/* nginx:/data/www/danstewart.dev/
+scp -r build/* web:/var/www/danstewart.dev/
