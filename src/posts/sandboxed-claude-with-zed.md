@@ -44,6 +44,8 @@ which claude-agent-acp
 
 ### `nono` Profile
 
+This file should be created in `~/.config/nono/profiles/my-claude-code.json`
+
 ```json
 {
   "meta": {
