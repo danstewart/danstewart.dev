@@ -54,8 +54,8 @@ This file should be created in `~/.config/nono/profiles/my-claude-code.json`
     "description": "Claude Code with additional project access"
   },
   "extends": "claude-code",
-  "security": {
-    "groups": ["git_config"]
+  "groups": {
+    "include": ["git_config"]
   },
   "filesystem": {
     "allow": ["$WORKDIR", "$HOME/.claude", "$HOME/.superset", "$HOME/projects"],
