@@ -23,7 +23,7 @@ tags: ["post"]
 I start with [supacode](https://supacode.sh/), it's basically the [ghostty terminal](https://ghostty.org/) but with some extra UI for creating and managing [git worktrees](https://git-scm.com/docs/git-worktree). With AI I feel I am switching tasks a lot more frequently and worktrees make it easier to isolate work than regular branches do, especially on projects that use sqlite, since each worktree has its own database.
 
 I use this `.git/hooks/post-checkout` script for initialising projects on new worktrees:
-```shell
+```bash
 #!/bin/bash
 
 base_repo_git=$(git rev-parse --path-format=absolute --git-common-dir)
