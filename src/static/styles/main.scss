@@ -1,3 +1,67 @@
+@font-face {
+	font-family: "IBM Plex Sans";
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url("/static/fonts/ibm-plex-sans/IBMPlexSans-Regular-Latin1.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "IBM Plex Sans";
+	font-style: italic;
+	font-weight: 400;
+	font-display: swap;
+	src: url("/static/fonts/ibm-plex-sans/IBMPlexSans-Italic-Latin1.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "IBM Plex Sans";
+	font-style: normal;
+	font-weight: 600;
+	font-display: swap;
+	src: url("/static/fonts/ibm-plex-sans/IBMPlexSans-SemiBold-Latin1.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "IBM Plex Sans";
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+	src: url("/static/fonts/ibm-plex-sans/IBMPlexSans-Bold-Latin1.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "IBM Plex Mono";
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url("/static/fonts/ibm-plex-mono/IBMPlexMono-Regular-Latin1.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "IBM Plex Mono";
+	font-style: italic;
+	font-weight: 400;
+	font-display: swap;
+	src: url("/static/fonts/ibm-plex-mono/IBMPlexMono-Italic-Latin1.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "IBM Plex Mono";
+	font-style: normal;
+	font-weight: 600;
+	font-display: swap;
+	src: url("/static/fonts/ibm-plex-mono/IBMPlexMono-SemiBold-Latin1.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "IBM Plex Mono";
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+	src: url("/static/fonts/ibm-plex-mono/IBMPlexMono-Bold-Latin1.woff2") format("woff2");
+}
+
 /* Dark theme */
 :root {
 	--bg-color: #000;
@@ -13,8 +77,8 @@
 	--grid-gutter: 2rem;
 	--font-size: 1.6rem;
 	--font-color: #f5f5f5;
-	--font-family-sans: sans-serif;
-	--font-family-mono: monaco, "Consolas", "Lucida Console", monospace;
+	--font-family-sans: "IBM Plex Sans", sans-serif;
+	--font-family-mono: "IBM Plex Mono", monospace;
 }
 
 /* Light theme */
@@ -30,7 +94,17 @@ body.light {
 
 /* Core stuff */
 body {
+	font-family: var(--font-family-sans);
 	margin-bottom: 500px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: 600;
 }
 
 ion-icon {
@@ -44,6 +118,14 @@ html {
 	margin: auto;
 }
 
+code,
+kbd,
+pre,
+samp,
+tt {
+	font-family: var(--font-family-mono);
+}
+
 code {
 	color: var(--color-code);
 }
@@ -54,7 +136,7 @@ code {
 }
 
 .header-text > a {
-	font-family: monospace;
+	font-family: var(--font-family-mono);
 }
 
 .section {
@@ -68,5 +150,5 @@ code {
 }
 
 .mono {
-	font-family: monospace;
+	font-family: var(--font-family-mono);
 }
