@@ -3,11 +3,22 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="description" content="" />
-		<meta name="keywords" content="" />
+		<meta name="description" content="{{ description | default: "Dan Stewart's projects and writing about software development." | escape }}" />
 		<meta name="author" content="Dan Stewart" />
+		<meta name="color-scheme" content="dark light" />
 
 		<title>{{ title | default: "Dan Stewart" }}</title>
+		<script>
+			(() => {
+				let savedTheme;
+				try {
+					savedTheme = window.localStorage.getItem("theme");
+				} catch {}
+
+				const theme = savedTheme || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+				document.documentElement.classList.toggle("light", theme === "light");
+			})();
+		</script>
 
 		<link rel="preload" href="/static/fonts/ibm-plex-sans/IBMPlexSans-Regular-Latin1.woff2" as="font" type="font/woff2" crossorigin />
 		<link rel="preload" href="/static/fonts/ibm-plex-mono/IBMPlexMono-Regular-Latin1.woff2" as="font" type="font/woff2" crossorigin />
@@ -28,26 +39,23 @@
 		{% block head %}{% endblock %}
 	</head>
 
-	<body>
-	</body>
-
 	<body class="bg">
-		<header>
-			<nav class="nav">
+		<header class="site-header">
+			<nav class="nav site-nav site-shell" aria-label="Primary navigation">
 				<div class="nav-left">
 					<h1 class="header-text"><a href="/">danstewart.dev</a></h1>
 				</div>
 				<div class="nav-right">
-					<a href="/posts"><ion-icon name="document-text-outline"></ion-icon></a>
-					<a href="https://github.com/danstewart"><ion-icon name="logo-github"></ion-icon></a>
-					<a rel="me" href="https://fosstodon.org/@danstewart_"><ion-icon name="logo-mastodon"></ion-icon></a>
-					<a href="https://www.linkedin.com/in/daniel-stewart-a699531b3/"><ion-icon name="logo-linkedin"></ion-icon></a>
-					<a id="theme-toggle"><ion-icon name="sunny-outline"></ion-icon></a>
+					<a class="site-nav__text-link" href="/posts/"{% if page.url contains "/posts/" %} aria-current="page"{% endif %}>Blog</a>
+					<a class="site-nav__icon-link" href="https://github.com/danstewart" aria-label="GitHub" title="GitHub"><ion-icon name="logo-github" aria-hidden="true"></ion-icon></a>
+					<a class="site-nav__icon-link" rel="me" href="https://fosstodon.org/@danstewart_" aria-label="Mastodon" title="Mastodon"><ion-icon name="logo-mastodon" aria-hidden="true"></ion-icon></a>
+					<a class="site-nav__icon-link" href="https://www.linkedin.com/in/daniel-stewart-a699531b3/" aria-label="LinkedIn" title="LinkedIn"><ion-icon name="logo-linkedin" aria-hidden="true"></ion-icon></a>
+					<button class="site-nav__icon-link theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light theme" title="Switch to light theme"><ion-icon name="sunny-outline" aria-hidden="true"></ion-icon></button>
 				</div>
 			</nav>
 		</header>
 		<main>
-			<div class="content">
+			<div class="content site-shell">
 				{% block content %}
 				{% endblock %}
 			</div>

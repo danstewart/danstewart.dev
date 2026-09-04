@@ -1,5 +1,5 @@
 #fun-stuff {
-	border-left: 5px dotted #EE7674;
+	border-left: 5px dotted var(--accent-coral);
 	padding-left: 15px;
 	margin-bottom: 50px;
 	padding-top: 2px;
@@ -7,7 +7,7 @@
 }
 
 #programming-stuff {
-	border-left: 5px dotted #4C9F70;
+	border-left: 5px dotted var(--accent-green);
 	padding-left: 15px;
 	margin-bottom: 50px;
 	padding-top: 2px;
@@ -15,7 +15,7 @@
 }
 
 #other-stuff {
-	border-left: 5px dotted #114da8;
+	border-left: 5px dotted var(--accent-blue);
 	padding-left: 15px;
 	padding-top: 2px;
 	padding-bottom: 2px;

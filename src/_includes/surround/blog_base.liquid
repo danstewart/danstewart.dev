@@ -13,18 +13,44 @@
 {% endblock head %}
 
 {% block content %}
-    <div class="markdown">
-        <h1 style="margin-bottom: 0">{{ title }}</h1>
+    {% assign olderPost = collections.post | getPreviousCollectionItem: page %}
+    {% assign newerPost = collections.post | getNextCollectionItem: page %}
 
-        <p class="mono">
-            Posted: {{ date | date: "%B %d %Y" }}
-            {% if updated %}
-                (Updated: {{ updated | date: "%B %d %Y" }})
-            {% endif %}
-        </p>
+    <article class="markdown">
+        <header class="post-header">
+            <a class="post-header__back" href="/posts/">All posts</a>
+            <h1>{{ title }}</h1>
+
+            <p class="post-meta mono">
+                <span>Published <time datetime="{{ date | date: "%Y-%m-%d" }}">{{ date | date: "%B %d %Y" }}</time></span>
+                {% if updated %}
+                    <span>Updated <time datetime="{{ updated | date: "%Y-%m-%d" }}">{{ updated | date: "%B %d %Y" }}</time></span>
+                {% endif %}
+            </p>
+        </header>
 
         <div class="blog-body">
             {{ content }}
         </div>
-    </div>
+
+        <footer class="post-footer">
+            <a class="post-footer__all" href="/posts/">All posts</a>
+
+            <nav class="post-navigation" aria-label="More blog posts">
+                {% if olderPost %}
+                    <a class="post-navigation__link post-navigation__link--older" href="{{ olderPost.url | url }}" rel="prev">
+                        <span class="post-navigation__label">Older post</span>
+                        <span>{{ olderPost.data.title }}</span>
+                    </a>
+                {% endif %}
+
+                {% if newerPost %}
+                    <a class="post-navigation__link post-navigation__link--newer" href="{{ newerPost.url | url }}" rel="next">
+                        <span class="post-navigation__label">Newer post</span>
+                        <span>{{ newerPost.data.title }}</span>
+                    </a>
+                {% endif %}
+            </nav>
+        </footer>
+    </article>
 {% endblock %}

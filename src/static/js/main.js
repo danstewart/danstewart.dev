@@ -1,28 +1,32 @@
 // Toggle between light and dark theme
-const setTheme = to => {
-	const SUN = `<ion-icon name="sunny-outline"></ion-icon>`;
-	const MOON = `<ion-icon name="moon-outline"></ion-icon>`;
+const setTheme = (to, persist = true) => {
+	const SUN = `<ion-icon name="sunny-outline" aria-hidden="true"></ion-icon>`;
+	const MOON = `<ion-icon name="moon-outline" aria-hidden="true"></ion-icon>`;
+	const isLight = to === "light";
 
-	if (to === "light") {
-		document.body.classList.add("light");
-	} else {
-		document.body.classList.remove("light");
+	document.documentElement.classList.toggle("light", isLight);
+
+	const button = document.querySelector("#theme-toggle");
+	const label = `Switch to ${isLight ? "dark" : "light"} theme`;
+	button.innerHTML = isLight ? MOON : SUN;
+	button.setAttribute("aria-label", label);
+	button.setAttribute("title", label);
+
+	if (persist) {
+		try {
+			window.localStorage.setItem("theme", to);
+		} catch {}
 	}
-
-	let isLight = to === "light";
-	let anchor = document.querySelector("#theme-toggle");
-	anchor.innerHTML = isLight ? MOON : SUN;
-	window.localStorage.setItem("theme", to);
 };
 
 // Get the current theme
 const getCurrentTheme = () => {
-	let currentTheme = "dark";
-	if (window.localStorage.getItem("theme") === "light") {
-		currentTheme = "light";
-	}
+	try {
+		const savedTheme = window.localStorage.getItem("theme");
+		if (savedTheme === "light" || savedTheme === "dark") return savedTheme;
+	} catch {}
 
-	return currentTheme;
+	return window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
 };
 
 const setupImageLightbox = () => {
@@ -74,7 +78,7 @@ const setupImageLightbox = () => {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-	setTheme(getCurrentTheme());
+	setTheme(getCurrentTheme(), false);
 	setupImageLightbox();
 
 	document.querySelector("#theme-toggle").addEventListener("click", () => {
