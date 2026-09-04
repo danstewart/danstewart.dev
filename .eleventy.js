@@ -1,7 +1,10 @@
 const markdownIt = require("markdown-it");
+const pluginRss = require("@11ty/eleventy-plugin-rss");
 const sass = require("sass");
 
 module.exports = function (eleventyConfig) {
+	eleventyConfig.addPlugin(pluginRss);
+
 	// Add static files
 	eleventyConfig.addPassthroughCopy("src/static/");
 

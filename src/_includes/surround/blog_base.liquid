@@ -5,8 +5,8 @@
     <link rel="stylesheet" href="/static/styles/markdown.css" />
 
     <!-- 3rd party assets -->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/a11y-dark.min.css" />
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <link rel="stylesheet" href="/static/vendor/highlight.js/11.7.0/a11y-dark.min.css" />
+    <script src="/static/vendor/highlight.js/11.7.0/highlight.min.js"></script>
     <script>
         hljs.highlightAll();
     </script>
@@ -24,7 +24,7 @@
             <p class="post-meta mono">
                 <span>Published <time datetime="{{ date | date: "%Y-%m-%d" }}">{{ date | date: "%B %d %Y" }}</time></span>
                 {% if updated %}
-                    <span>Updated <time datetime="{{ updated | date: "%Y-%m-%d" }}">{{ updated | date: "%B %d %Y" }}</time></span>
+                    • <span>Updated <time datetime="{{ updated | date: "%Y-%m-%d" }}">{{ updated | date: "%B %d %Y" }}</time></span>
                 {% endif %}
             </p>
         </header>

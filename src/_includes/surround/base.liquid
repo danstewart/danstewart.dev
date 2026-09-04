@@ -23,13 +23,14 @@
 		<link rel="preload" href="/static/fonts/ibm-plex-sans/IBMPlexSans-Regular-Latin1.woff2" as="font" type="font/woff2" crossorigin />
 		<link rel="preload" href="/static/fonts/ibm-plex-mono/IBMPlexMono-Regular-Latin1.woff2" as="font" type="font/woff2" crossorigin />
 
-		<!-- From https://favicon.io/ -->
-		<link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png" />
-		<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png" />
-		<link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png" />
+		<link rel="icon" href="/static/icons/favicon.svg" type="image/svg+xml" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/static/icons/apple-touch-icon.png" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/static/icons/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="/static/icons/favicon-16x16.png" />
+		<link rel="alternate" href="/feed.xml" type="application/rss+xml" title="Dan's Blog" />
 
 		<!-- CSS -->
-		<link rel="stylesheet" href="https://unpkg.com/chota@latest" />
+		<link rel="stylesheet" href="/static/vendor/chota/0.9.2/chota.min.css" />
 
 		<!-- Our stuff -->
 		<link rel="stylesheet" href="/static/styles/main.css" />
@@ -47,10 +48,13 @@
 				</div>
 				<div class="nav-right">
 					<a class="site-nav__text-link" href="/posts/"{% if page.url contains "/posts/" %} aria-current="page"{% endif %}>Blog</a>
-					<a class="site-nav__icon-link" href="https://github.com/danstewart" aria-label="GitHub" title="GitHub"><ion-icon name="logo-github" aria-hidden="true"></ion-icon></a>
-					<a class="site-nav__icon-link" rel="me" href="https://fosstodon.org/@danstewart_" aria-label="Mastodon" title="Mastodon"><ion-icon name="logo-mastodon" aria-hidden="true"></ion-icon></a>
-					<a class="site-nav__icon-link" href="https://www.linkedin.com/in/daniel-stewart-a699531b3/" aria-label="LinkedIn" title="LinkedIn"><ion-icon name="logo-linkedin" aria-hidden="true"></ion-icon></a>
-					<button class="site-nav__icon-link theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light theme" title="Switch to light theme"><ion-icon name="sunny-outline" aria-hidden="true"></ion-icon></button>
+					<a class="site-nav__icon-link" href="https://github.com/danstewart" aria-label="GitHub" title="GitHub"><span class="site-nav__icon" aria-hidden="true">{% include "icons/ionicons/5.5.2/logo-github.svg" %}</span></a>
+					<a class="site-nav__icon-link" rel="me" href="https://fosstodon.org/@danstewart_" aria-label="Mastodon" title="Mastodon"><span class="site-nav__icon" aria-hidden="true">{% include "icons/ionicons/5.5.2/logo-mastodon.svg" %}</span></a>
+					<a class="site-nav__icon-link" href="https://www.linkedin.com/in/daniel-stewart-a699531b3/" aria-label="LinkedIn" title="LinkedIn"><span class="site-nav__icon" aria-hidden="true">{% include "icons/ionicons/5.5.2/logo-linkedin.svg" %}</span></a>
+					<button class="site-nav__icon-link theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light theme" title="Switch to light theme">
+						<span class="site-nav__icon theme-toggle__sun" aria-hidden="true">{% include "icons/ionicons/5.5.2/sunny-outline.svg" %}</span>
+						<span class="site-nav__icon theme-toggle__moon" aria-hidden="true">{% include "icons/ionicons/5.5.2/moon-outline.svg" %}</span>
+					</button>
 				</div>
 			</nav>
 		</header>
@@ -60,8 +64,5 @@
 				{% endblock %}
 			</div>
 		</main>
-
-		<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-		<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 	</body>
 </html>

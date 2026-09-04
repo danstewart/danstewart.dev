@@ -1,0 +1,25 @@
+---
+permalink: /feed.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+	<channel>
+		<title>{{ site.title | escape }}</title>
+		<link>{{ site.url }}/</link>
+		<description>{{ site.description | escape }}</description>
+		<language>{{ site.language }}</language>
+		<lastBuildDate>{{ collections.post | getNewestCollectionItemDate | dateToRfc822 }}</lastBuildDate>
+		<atom:link href="{{ '/feed.xml' | absoluteUrl(site.url) }}" rel="self" type="application/rss+xml" />
+		{% for post in collections.post | reverse %}
+			{% set absolutePostUrl = post.url | absoluteUrl(site.url) %}
+			<item>
+				<title>{{ post.data.title | escape }}</title>
+				<link>{{ absolutePostUrl }}</link>
+				<guid isPermaLink="true">{{ absolutePostUrl }}</guid>
+				<pubDate>{{ post.date | dateToRfc822 }}</pubDate>
+				<content:encoded>{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</content:encoded>
+			</item>
+		{% endfor %}
+	</channel>
+</rss>

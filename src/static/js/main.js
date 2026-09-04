@@ -1,14 +1,11 @@
 // Toggle between light and dark theme
 const setTheme = (to, persist = true) => {
-	const SUN = `<ion-icon name="sunny-outline" aria-hidden="true"></ion-icon>`;
-	const MOON = `<ion-icon name="moon-outline" aria-hidden="true"></ion-icon>`;
 	const isLight = to === "light";
 
 	document.documentElement.classList.toggle("light", isLight);
 
 	const button = document.querySelector("#theme-toggle");
 	const label = `Switch to ${isLight ? "dark" : "light"} theme`;
-	button.innerHTML = isLight ? MOON : SUN;
 	button.setAttribute("aria-label", label);
 	button.setAttribute("title", label);
 

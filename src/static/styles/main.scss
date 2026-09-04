@@ -123,10 +123,6 @@ h6 {
 	font-weight: 600;
 }
 
-ion-icon {
-	font-size: 24px;
-}
-
 .site-shell {
 	box-sizing: border-box;
 	width: min(100%, 1440px);
@@ -214,6 +210,27 @@ button:focus-visible,
 	height: 40px;
 	min-width: 40px;
 	padding: 0;
+}
+
+.site-nav__icon {
+	display: inline-flex;
+	width: 24px;
+	height: 24px;
+
+	svg {
+		width: 100%;
+		height: 100%;
+		fill: currentColor;
+	}
+}
+
+.theme-toggle__moon,
+:root.light .theme-toggle__sun {
+	display: none;
+}
+
+:root.light .theme-toggle__moon {
+	display: inline-flex;
 }
 
 .site-nav button.site-nav__icon-link {
