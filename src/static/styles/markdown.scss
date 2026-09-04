@@ -56,6 +56,62 @@
 
 	.blog-body {
 		max-width: 800px;
+
+		> p > img {
+			display: block;
+			width: min(1000px, calc(100vw - 3rem));
+			max-width: none;
+			height: auto;
+			margin: 1.8rem 0;
+			border-radius: 0.4rem;
+			cursor: zoom-in;
+		}
+	}
+}
+
+.image-lightbox {
+	box-sizing: border-box;
+	width: 100vw;
+	max-width: none;
+	height: 100vh;
+	height: 100dvh;
+	max-height: none;
+	margin: 0;
+	padding: 3rem;
+	border: 0;
+	background: rgba(0, 0, 0, 0.94);
+	overflow: hidden;
+
+	&[open] {
+		display: grid;
+		place-items: center;
+	}
+
+	&::backdrop {
+		background: rgba(0, 0, 0, 0.94);
+	}
+
+	img {
+		max-width: 100%;
+		max-height: 100%;
+		object-fit: contain;
+	}
+
+	.image-lightbox__close {
+		position: fixed;
+		top: 1rem;
+		right: 1rem;
+		z-index: 1;
+		width: 2.75rem;
+		height: 2.75rem;
+		padding: 0;
+		border: 0;
+		border-radius: 50%;
+		background: rgba(0, 0, 0, 0.7);
+		color: white;
+		font-size: 2rem;
+		line-height: 1;
+		cursor: pointer;
 	}
 }
 
